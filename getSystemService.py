@@ -1,14 +1,16 @@
 """How to get getSystemService in service file"""
 
+from jnius import cast, autoclass
 from android_notify.config import get_python_activity_context
- # This way it will always import the right activity context whether from service or app UI
+
+ # Using `get_python_activity_context` This way it will always import the right activity context whether from service or app UI
+
 context=get_python_activity_context()
 notification_service = context.getSystemService(context.NOTIFICATION_SERVICE)
 notification_manager = cast(NotificationManager, notification_service)
 
 OR ----------
 
-from jnius import cast, autoclass
 PythonActivity = autoclass('org.kivy.android.PythonService')
 service = PythonActivity.mService
 context = service.getApplication().getApplicationContext()
