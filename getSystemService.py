@@ -11,7 +11,7 @@ notification_service = context.getSystemService(context.NOTIFICATION_SERVICE)
 notification_manager = cast(NotificationManager, notification_service)
 
 
-OR ----------
+# OR ----------------
  # Using `get_python_activity_context` This way it will always import the right activity context whether from service or app UI
 
 context=get_python_activity_context()
