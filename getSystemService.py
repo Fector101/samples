@@ -3,6 +3,7 @@
 
 from jnius import cast, autoclass
 from android_notify.config import get_python_activity_context
+NotificationManager = autoclass('android.app.NotificationManager')
 
 PythonActivity = autoclass('org.kivy.android.PythonService')
 service = PythonActivity.mService
