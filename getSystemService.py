@@ -14,9 +14,7 @@ OR ----------
 PythonActivity = autoclass('org.kivy.android.PythonService')
 service = PythonActivity.mService
 context = service.getApplication().getApplicationContext()
-    
-def get_notification_manager():
-    notification_service = context.getSystemService(context.NOTIFICATION_SERVICE)
-    return cast(NotificationManager, notification_service)
+notification_service = context.getSystemService(context.NOTIFICATION_SERVICE)
+notification_manager = cast(NotificationManager, notification_service)
 
 # https://github.com/Fector101/android_notify/blob/main/android_notify/config.py#L122
